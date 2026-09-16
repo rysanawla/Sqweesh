@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peraturan daerah berjalan — Sqweesh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">Sqweesh<span>Pemerintah Kabupaten Sqweeby</span></a>
+    <nav>
+      <a href="agenda.html">Agenda</a>
+      <a href="raperda.html" aria-current="page">Raperda</a>
+      <a href="arsip-video.html">Video rapat</a>
+      <a href="notulensi.html">Notulensi</a>
+      <a href="profil-asn.html">Profil ASN</a>
+      <a href="pengaduan.html">Pengaduan</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap page-head">
+  <a class="back" href="index.html">Kembali ke beranda</a>
+  <h1>Peraturan daerah yang sedang dibahas</h1>
+  <p class="lede">Setiap rancangan ditampilkan beserta tahapan yang sudah dilewati. Selama masa konsultasi dibuka, siapa pun boleh mengirim masukan dan seluruh masukan yang masuk dirangkum dalam dokumen tanggapan.</p>
+</div>
+
+<main>
+  <div class="wrap">
+
+    <article class="item">
+      <span class="chip open">Masukan dibuka sampai 30 September 2026</span>
+      <h3>Raperda Pengelolaan Sampah Rumah Tangga</h3>
+      <p class="meta">Pengusul: Dinas Lingkungan Hidup &middot; Tahap: pembahasan bersama DPRD</p>
+      <p>Mengatur pemilahan sampah di tingkat rumah tangga, jadwal pengangkutan per kecamatan, dan skema retribusi baru untuk kawasan permukiman padat.</p>
+      <p><a href="#">Unduh naskah rancangan (PDF)</a> &nbsp;&middot;&nbsp; <a href="#">Naskah akademik</a> &nbsp;&middot;&nbsp; <a href="#masukan">Kirim masukan</a></p>
+    </article>
+
+    <article class="item">
+      <span class="chip open">Masukan dibuka sampai 14 Oktober 2026</span>
+      <h3>Raperda Penataan Pedagang Kaki Lima</h3>
+      <p class="meta">Pengusul: Dinas Koperasi dan UKM &middot; Tahap: penyusunan naskah akademik</p>
+      <p>Menetapkan zona berdagang, mekanisme penataan di ruas jalan utama, dan perlindungan pedagang lama saat terjadi relokasi.</p>
+      <p><a href="#">Unduh naskah rancangan (PDF)</a> &nbsp;&middot;&nbsp; <a href="#masukan">Kirim masukan</a></p>
+    </article>
+
+    <article class="item">
+      <span class="chip open">Masukan dibuka sampai 2 November 2026</span>
+      <h3>Raperda Perlindungan Lahan Pertanian Berkelanjutan</h3>
+      <p class="meta">Pengusul: Dinas Pertanian &middot; Tahap: harmonisasi antar perangkat daerah</p>
+      <p>Menetapkan kawasan sawah yang tidak boleh dialihfungsikan serta insentif bagi petani yang mempertahankan lahannya.</p>
+      <p><a href="#">Unduh naskah rancangan (PDF)</a> &nbsp;&middot;&nbsp; <a href="#masukan">Kirim masukan</a></p>
+    </article>
+
+    <article class="item">
+      <span class="chip done">Sudah ditetapkan</span>
+      <h3>Perda Penyelenggaraan Perpustakaan Daerah</h3>
+      <p class="meta">Ditetapkan 18 Juli 2026 &middot; 41 masukan warga masuk selama konsultasi</p>
+      <p><a href="#">Unduh naskah final</a> &nbsp;&middot;&nbsp; <a href="#">Lihat rangkuman masukan warga dan tanggapan pemerintah</a></p>
+    </article>
+
+    <h2 id="masukan" style="margin-top:48px">Kirim masukan atas rancangan</h2>
+    <p>Masukan yang masuk dibaca tim perancang dan dirangkum dalam dokumen tanggapan yang diterbitkan di halaman ini setelah masa konsultasi tutup.</p>
+
+    <form class="form" action="https://formspree.io/f/KODE_FORMULIR_ANDA" method="POST">
+      <div class="field">
+        <label for="raperda">Rancangan yang ditanggapi</label>
+        <select id="raperda" name="raperda" required>
+          <option value="sampah">Raperda Pengelolaan Sampah Rumah Tangga</option>
+          <option value="pkl">Raperda Penataan Pedagang Kaki Lima</option>
+          <option value="lahan">Raperda Perlindungan Lahan Pertanian Berkelanjutan</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="pasal">Pasal atau bagian yang ditanggapi</label>
+        <p class="help">Kosongkan jika masukan bersifat umum.</p>
+        <input type="text" id="pasal" name="pasal" placeholder="Misal: Pasal 12 ayat (2)">
+      </div>
+
+      <div class="field">
+        <label for="isi">Masukan Anda</label>
+        <textarea id="isi" name="masukan" required placeholder="Jelaskan usulan perubahan dan alasannya."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="nama">Nama</label>
+        <input type="text" id="nama" name="nama" required>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <p class="help">Dipakai untuk mengirim tanggapan. Tidak ditampilkan di halaman publik.</p>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <button type="submit">Kirim masukan</button>
+    </form>
+
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <p>Masa konsultasi setiap rancangan minimal 21 hari kerja sejak naskah diunggah.</p>
+  </div>
+</footer>
+
+</body>
+</html>

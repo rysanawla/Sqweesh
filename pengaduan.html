@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kanal pengaduan — Sqweesh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">Sqweesh<span>Pemerintah Kabupaten Sqweeby</span></a>
+    <nav>
+      <a href="agenda.html">Agenda</a>
+      <a href="raperda.html">Raperda</a>
+      <a href="arsip-video.html">Video rapat</a>
+      <a href="notulensi.html">Notulensi</a>
+      <a href="profil-asn.html">Profil ASN</a>
+      <a href="pengaduan.html" aria-current="page">Pengaduan</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap page-head">
+  <a class="back" href="index.html">Kembali ke beranda</a>
+  <h1>Kanal pengaduan</h1>
+  <p class="lede">Laporkan masalah pelayanan, pungutan di luar ketentuan, atau pekerjaan yang tidak sesuai. Laporan anonim dan laporan terbuka masuk ke antrean yang sama dan ditangani dengan bobot yang sama.</p>
+</div>
+
+<main>
+  <div class="wrap">
+
+    <form class="form" action="https://formspree.io/f/KODE_FORMULIR_ANDA" method="POST">
+
+      <div class="field">
+        <label>Cara Anda melapor</label>
+        <div class="choice">
+          <label>
+            <input type="radio" name="mode" value="publik" checked>
+            <strong>Terbuka</strong>
+            <span>Identitas Anda diketahui petugas, dan Anda bisa memantau perkembangan laporan lewat email.</span>
+          </label>
+          <label>
+            <input type="radio" name="mode" value="anonim">
+            <strong>Anonim</strong>
+            <span>Tanpa identitas. Anda tetap menerima kode pelacakan di halaman konfirmasi untuk mengecek statusnya.</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="kategori">Jenis laporan</label>
+        <select id="kategori" name="kategori" required>
+          <option value="pelayanan">Pelayanan publik lambat atau berbelit</option>
+          <option value="pungutan">Pungutan di luar ketentuan</option>
+          <option value="infrastruktur">Pekerjaan atau fasilitas bermasalah</option>
+          <option value="perilaku">Perilaku aparatur</option>
+          <option value="lainnya">Lainnya</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="lokasi">Lokasi kejadian</label>
+        <input type="text" id="lokasi" name="lokasi" placeholder="Desa/kelurahan dan kecamatan" required>
+      </div>
+
+      <div class="field">
+        <label for="uraian">Uraian kejadian</label>
+        <p class="help">Sebutkan kapan terjadinya dan apa yang Anda alami atau lihat. Semakin jelas, semakin cepat bisa ditelusuri.</p>
+        <textarea id="uraian" name="uraian" required></textarea>
+      </div>
+
+      <div id="identitas">
+        <div class="field">
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" name="nama">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <p class="help">Dipakai untuk mengirim perkembangan laporan. Tidak ditampilkan di halaman publik.</p>
+          <input type="email" id="email" name="email">
+        </div>
+      </div>
+
+      <p class="notice" id="catatan-anonim" hidden>
+        Laporan anonim tidak menyertakan nama maupun email. Simpan baik-baik kode pelacakan yang muncul setelah mengirim, karena itu satu-satunya cara mengecek status laporan Anda.
+      </p>
+
+      <button type="submit">Kirim laporan</button>
+    </form>
+
+    <h2 style="margin-top:48px">Bagaimana laporan ditangani</h2>
+    <article class="item">
+      <p><strong>1&ndash;2 hari kerja:</strong> laporan diperiksa kelengkapannya dan diteruskan ke perangkat daerah terkait.</p>
+      <p><strong>Sampai 4 hari kerja:</strong> tanggapan pertama dikirim, berisi siapa yang menangani dan rencana langkahnya.</p>
+      <p><strong>Setelah selesai:</strong> hasil penanganan dicatat dan laporan sejenis dirangkum dalam laporan triwulanan yang dipublikasikan di halaman ini.</p>
+      <p class="meta">Laporan yang menyangkut dugaan tindak pidana diteruskan ke aparat penegak hukum dan tidak dipublikasikan.</p>
+    </article>
+
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <p>Dalam keadaan darurat, hubungi layanan kedaruratan daerah di 112. Kanal ini tidak dipantau 24 jam.</p>
+  </div>
+</footer>
+
+<script>
+  const identitas = document.getElementById('identitas');
+  const catatan = document.getElementById('catatan-anonim');
+
+  document.querySelectorAll('input[name="mode"]').forEach(function (radio) {
+    radio.addEventListener('change', function () {
+      const anonim = this.value === 'anonim';
+      identitas.hidden = anonim;
+      catatan.hidden = !anonim;
+      document.getElementById('nama').value = '';
+      document.getElementById('email').value = '';
+    });
+  });
+</script>
+
+</body>
+</html>
